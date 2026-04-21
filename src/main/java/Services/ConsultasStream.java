@@ -135,10 +135,13 @@ public class ConsultasStream {
          * 10. Cliente con más reservas
          * getClienteTop(): obtener el cliente que más reservas tiene en el restaurante.
          */
+        //Preguntada en clase
         public Optional<Cliente> getClienteTop(){
             return reservas.stream()
-                    .map(Reserva::getCliente)
-                    .max(Comparator.comparing(Cliente::getNombre));
+                    .collect(Collectors.groupingBy(Reserva::getCliente, Collectors.counting()))
+                    .entrySet().stream()
+                    .max(Map.Entry.comparingByValue())
+                    .map(Map.Entry::getKey);
         }
 
         /**
