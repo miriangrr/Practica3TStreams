@@ -109,8 +109,8 @@ public class Main {
 
     public static void cargarReservas(Restaurante restaurante) {
 
+
         restaurante.addReserva(new Reserva(
-                1,
                 restaurante.getClientePorDni("11111111A"),
                 LocalDate.now(),
                 LocalTime.of(14, 0),
@@ -120,7 +120,6 @@ public class Main {
                 "terraza"));
 
         restaurante.addReserva(new Reserva(
-                2,
                 restaurante.getClientePorDni("22222222B"),
                 LocalDate.now().plusDays(1),
                 LocalTime.of(21, 30),
@@ -130,7 +129,6 @@ public class Main {
                 "interior"));
 
         restaurante.addReserva(new Reserva(
-                3,
                 restaurante.getClientePorDni("33333333C"),
                 LocalDate.now().plusDays(2),
                 LocalTime.of(15, 0),
@@ -140,7 +138,6 @@ public class Main {
                 "salón"));
 
         restaurante.addReserva(new Reserva(
-                4,
                 restaurante.getClientePorDni("44444444D"),
                 LocalDate.now(),
                 LocalTime.of(22, 0),
@@ -150,7 +147,6 @@ public class Main {
                 "barra"));
 
         restaurante.addReserva(new Reserva(
-                5,
                 restaurante.getClientePorDni("55555555E"),
                 LocalDate.now().plusDays(3),
                 LocalTime.of(13, 30),
@@ -160,7 +156,6 @@ public class Main {
                 "terraza"));
 
         restaurante.addReserva(new Reserva(
-                6,
                 restaurante.getClientePorDni("66666666F"),
                 LocalDate.now(),
                 LocalTime.of(20, 0),

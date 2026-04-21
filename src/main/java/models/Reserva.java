@@ -1,16 +1,17 @@
 package models;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 @Data
-@AllArgsConstructor
+
 @NoArgsConstructor
 public class Reserva {
     private long id;
+
     private Cliente cliente;
     private LocalDate fecha;
     private LocalTime hora;
@@ -18,6 +19,19 @@ public class Reserva {
     private double importePrevisto;
     private EstadoReserva estado;
     private String zona;
+    private static long contadorId = 1L;
+
+    public Reserva(Cliente cliente, LocalDate fecha,
+                   LocalTime hora, int numPersonas, double importePrevisto, EstadoReserva estado, String zona) {
+        this.id = contadorId++;
+        this.cliente = cliente;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.numPersonas = numPersonas;
+        this.importePrevisto = importePrevisto;
+        this.estado = estado;
+        this.zona = zona;
+    }
 
     @Override
     public String toString() {
